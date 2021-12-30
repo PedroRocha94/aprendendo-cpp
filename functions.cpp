@@ -25,6 +25,8 @@ double calculatorSum(double number1, double number2 = 7);   //Declaração da fu
 //Caso o parâmetro não tenha um valor atribuido no momento em que a função for chamada
 //O parâmetro passará a ter o valor padrão definido na declaração da função. 
 
+int calculatorSum(int number1, int number2);    //Função calculator sobrecarregada.
+
 
 int main(){
 
@@ -41,7 +43,19 @@ int main(){
     double y;
     cin >> y;
 
-    cout << "O valor da soma eh: " << calculatorSum(x);
+    cout << "Funcao calculatorSum com valor double:" << endl;
+    cout << "O valor da soma eh: " << calculatorSum(x, y) << endl;
+
+
+    cout << "Digite um numero inteiro: ";
+    int v;
+    cin >> v;
+    cout << "Digite outro numero inteiro: ";
+    int c;
+    cin >> c;
+
+    cout << "Funcao calculatorSum sobrecarregada com valor int:" << endl;
+    cout << "O valor da soma eh: " << calculatorSum(v,c) << endl;
 
     return 0;
 }
@@ -51,6 +65,10 @@ void farewells(){    //Definição da função.
     cout << "Bye";
 }
 
-double calculatorSum(double number1, double number2){   //Definição da função
+double calculatorSum(double number1, double number2){   //Definição da função.
+    return number1 + number2;
+}
+
+int calculatorSum(int number1, int number2){    //Definição da função sobrecarregada.
     return number1 + number2;
 }
