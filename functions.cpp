@@ -20,7 +20,11 @@ void greetings(){
 //Isso torna o código mais legível.
 void farewells();   //Declaração da função.
 
-double calculatorSum(double number1, double number2);   //Declaração da função
+double calculatorSum(double number1, double number2 = 7);   //Declaração da função
+//Em C++ podemos atribuir um valor padrão para os parâmetros de funções
+//Caso o parâmetro não tenha um valor atribuido no momento em que a função for chamada
+//O parâmetro passará a ter o valor padrão definido na declaração da função. 
+
 
 int main(){
 
@@ -37,7 +41,7 @@ int main(){
     double y;
     cin >> y;
 
-    cout << "O valor da soma eh: " << calculatorSum(x,y);
+    cout << "O valor da soma eh: " << calculatorSum(x);
 
     return 0;
 }
