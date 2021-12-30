@@ -8,6 +8,13 @@ class MyClass { //Classe de exemplo.
         int myNum;
         string myString;
 
+        //Construtores serve para dar algum valor inicial para o objeto que será instanciado.
+        MyClass(){
+            cout << "Good Morning\n";   //Assim que o Objeto for criado, será mostrado na tela a mensagem
+        }                               //que está no construtor;
+                                        //Usa-se construtores para instanciar objetos com valores padrões.
+
+
         //Métodos podem ser declarados e definidos dentro da classe.
         void myMethod(){    //Metodos são funções da classe.
             cout << "Hello World\n";
@@ -24,6 +31,12 @@ class Car{  //Classe carro
         string model;
         int year;
 
+        Car(string x, string y, int z){     //Construtor da Classe carro.
+            brand = x;                      //Valores sendo atribuidos, para quando o objeto seja criado
+            model = y;                      //já tenha valores.
+            year = z;
+        }
+
         void acelerar(int ace = 0){     //Essa função define a velocidade em que o carro está.
             cout << "Carro a " << ace << "Km por hora" << "\n";
         }
@@ -39,21 +52,15 @@ int main(){
     cout << myObj.myNum << endl;
     cout << myObj.myString << endl;
     myObj.myMethod();
+    myObj.myNewMethod();
 
     cout << "----------------------------------------------";
     cout << "\n";
 
-    Car myCar;  //Criação de um objeto carro.
+    Car myCar("BMW", "X5", 1999);  //Criação de um objeto carro. Valores sendo atribuidos aos atributos da classe carro.
 
-    myCar.brand = "BMW";
-    myCar.model = "X5";
-    myCar.year = 1999;  //Valores sendo atribuidos aos atributos da classe carro.
-
-    Car myCar2; //Criação de outro objeto carro.
-
-    myCar2.brand = "Ford";
-    myCar2.model = "Mustang";
-    myCar2.year = 1969; //Valores sendo atribuidos a outro objetos da classe carro.
+    Car myCar2("Ford", "Mustang", 1969); //Criação de outro objeto carro.
+                                        //Valores sendo atribuidos a outro objetos da classe carro.
 
     cout << myCar.brand << " " << myCar.model << " "<< myCar.year << "\n";
     cout << myCar2.brand << " " << myCar2.model << " " << myCar2.year << "\n";
@@ -61,11 +68,7 @@ int main(){
     cout << "----------------------------------------------";
     cout << "\n";
 
-    Car carro1;
-
-    carro1.brand = "Ford";
-    carro1.model = "Fusca";
-    carro1.year = 1990;
+    Car carro1("Ford", "Fusca", 1990);
 
     cout << carro1.brand << " " << carro1.model << " "
          << carro1.year << " ";
@@ -75,5 +78,5 @@ int main(){
 }
 
 void MyClass::myNewMethod(){        //definição do método da classe myClass
-    cout << "Hi, guys";
+    cout << "Hi, guys\n";
 }
